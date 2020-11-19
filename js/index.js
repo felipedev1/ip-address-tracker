@@ -9,6 +9,10 @@ const ispField = document.getElementById('isp')
 //add leaflet map
 let map = L.map('map')
 L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+const iconLocation = L.icon({
+  iconUrl: '../images/icon-location.svg',
+  iconSize: [38, 42],
+})
 
 
 //fetch data
@@ -40,6 +44,6 @@ function getIpInfo() {
     timezoneField.innerHTML = response.location.timezone
     ispField.innerHTML = response.isp
     map.setView([response.location.lat, response.location.lng], 15)
-    L.marker([response.location.lat, response.location.lng]).addTo(map);
+    L.marker([response.location.lat, response.location.lng]).setIcon(iconLocation).addTo(map);
     })
 }
