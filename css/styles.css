@@ -1,5 +1,100 @@
+:root {
+  --dark-gray: hsl(0, 0%, 59%);
+  --very-dark-gray: hsl(0, 0%, 17%);
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: 'Rubik', sans-serif;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+header {
+  height: 280px;
+  width: 100vw;
+  background-image: url('/images/pattern-bg.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  margin: 30px 0;
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+header .search {
+  margin-bottom: 50px;
+  height: 60px;
+  width: 38vw;
+  display: flex;
+}
+
+header .search input {
+  flex: 1;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  padding: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  border: none;
+  outline: none;
+}
+
+header .search button {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 25px;
+  background-color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header .ip-info {
+  list-style: none;
+  width: 76vw;
+  min-height: 160px;
+  padding: 40px 0;
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.05);
+}
+
+header .ip-info li {
+  padding: 0 30px;
+}
+
+header .ip-info li + li {
+  border-left: 1px #D9D9D9 solid;
+}
+
+header .ip-info li span {
+  text-transform: uppercase;
+  color: var(--dark-gray);
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0,1em;
+}
+
+header .ip-info li strong {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 30px;
+  color: var(--very-dark-gray);
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
