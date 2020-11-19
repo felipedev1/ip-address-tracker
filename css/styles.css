@@ -11,9 +11,11 @@
 
 body {
   font-family: 'Rubik', sans-serif;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -23,6 +25,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 999;
 }
 
 header h1 {
@@ -61,6 +64,7 @@ header .search button {
 }
 
 header .ip-info {
+  z-index: 9999;
   list-style: none;
   width: 76vw;
   min-height: 160px;
@@ -95,6 +99,13 @@ header .ip-info li strong {
   line-height: 30px;
   color: var(--very-dark-gray);
 }
+
+section#map {
+  width: 100vw;
+  flex: 1;
+  z-index: 10;
+}
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

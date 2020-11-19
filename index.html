@@ -17,6 +17,7 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+  <script defer src="./js/index.js"></script>
 </head>
 
 <body>
@@ -25,8 +26,8 @@
     <h1>
       IP Address Tracker
     </h1>
-    <form class="search">
-      <input placeholder="Search for any IP address or domain" type="search" name="ip" id="searchIp">
+    <form id="searchIpForm" class="search">
+      <input placeholder="Search for any IP address" type="search" name="ip" id="searchIp">
       <button type="submit">
         <img src="./images/icon-arrow.svg" alt="Search">
       </button>
@@ -34,22 +35,26 @@
     <ul class="ip-info">
       <li>
         <span>IP Address</span>
-        <strong>192.212.174.101</strong>
+        <strong id="ip"></strong>
       </li>
       <li>
         <span>Location</span>
-        <strong>Brooklyn, NY 10001</strong>
+        <strong id="location"></strong>
       </li>
       <li>
         <span>Timezone</span>
-        <strong>UTC-5:00</strong>
+        <strong id="timezone"></strong>
       </li>
       <li>
         <span>ISP</span>
-        <strong>SpaceX Starlink</strong>
+        <strong id="isp"></strong>
       </li>
     </ul>
   </header>
+
+  <section id="map">
+    
+  </section>
 
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
