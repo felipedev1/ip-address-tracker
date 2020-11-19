@@ -73,6 +73,26 @@ header .ip-info {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+header .ip-info.closed {
+  transform: scale(0.3) translateY(-100%);
+  align-items: center;
+  justify-content: center;
+}
+
+header .ip-info.closed li {
+  display: none;
+}
+
+header .ip-info.closed i {
+  display: block;
+  font-size: 60px;
+}
+
+header .ip-info i {
+  display: none;
 }
 
 header .ip-info li {

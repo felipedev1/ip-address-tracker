@@ -10,6 +10,8 @@ const ispField = document.getElementById('isp')
 let map = L.map('map')
 L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
+
+//fetch data
 window.addEventListener('load', getIpInfo())
 
 document.getElementById('searchIp').addEventListener('change', (event) => {
@@ -20,6 +22,12 @@ document.getElementById('searchIpForm').addEventListener('submit', (event) => {
   event.preventDefault()
 
   getIpInfo()
+})
+
+//ip info close
+const ipInfo = document.querySelector('.ip-info')
+ipInfo.addEventListener('click', () => {
+  ipInfo.classList.toggle('closed')
 })
 
 
