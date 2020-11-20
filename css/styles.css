@@ -67,13 +67,12 @@ header .ip-info {
   z-index: 9999;
   list-style: none;
   width: 76vw;
-  min-height: 160px;
   padding: 40px 0;
   display: flex;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 20px 50px 5px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 header .ip-info.closed {
@@ -126,6 +125,73 @@ section#map {
   z-index: 10;
 }
 
+@media(max-width: 1150px) {
+  header .search {
+    width: auto;
+  }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+  header .ip-info {
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header .ip-info li {
+    margin-bottom: 15px;
+  }
+}
+
+@media(max-width: 600px) {
+  header h1 {
+    font-size: 26px;
+    margin: 15px 0;
+  }
+
+  header .search {
+    width: 90vw;
+    margin-bottom: 25px;
+  }
+
+  header .ip-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: auto;
+    width: 90vw;
+  }
+
+  header .ip-info li {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  header .ip-info li + li {
+    border-left: none;
+  }
+  
+
+  header .ip-info li span {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  header .ip-info li strong {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media(max-width: 400px) {
+  header .search {
+    height: 50px;
+  }
+
+  header .search input {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  header .search button {
+    padding: 0 15px;
+  }
+}
