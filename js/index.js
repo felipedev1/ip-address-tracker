@@ -39,11 +39,16 @@ function getIpInfo() {
   fetch(`https://geo.ipify.org/api/v1?apiKey=${geolocationApiKey}&ipAddress=${ipAddress}`)
   .then(res => res.json())
   .then(response => {
-    ipField.innerHTML = response.ip
-    locationField.innerHTML = `${response.location.city}, ${response.location.country}`
-    timezoneField.innerHTML = response.location.timezone
-    ispField.innerHTML = response.isp
-    map.setView([response.location.lat, response.location.lng], 15)
-    L.marker([response.location.lat, response.location.lng]).setIcon(iconLocation).addTo(map);
+    if(response.ip) {
+      ipField.innerHTML = response.ip
+      locationField.innerHTML = `${response.location.city}, ${response.location.country}`
+      timezoneField.innerHTML = response.location.timezone
+      ispField.innerHTML = response.isp
+      map.setView([response.location.lat, response.location.lng], 15)
+      L.marker([response.location.lat, response.location.lng]).setIcon(iconLocation).addTo(map);
+    } else {
+      throw Error
+    }
     })
+  .catch(error => alert('Invalid IP address'))
 }
